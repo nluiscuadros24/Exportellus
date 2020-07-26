@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block breadcrumb %}
+  {% include 'orders/snippets/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="payment-body">
+  <div class="payment">
+      <div class="col">
+          <div class="h4">
+          Método de pago
+          </div>
+          <div class="">
+            {% include 'billing_profiles/snippets/billing_profile.html' %}
+          </div>
+          <div class="mt-2">
+          <a href="{% url 'orders:confirm' %}" class="btn btn-success btn-block">Confirmar</a>
+          </div>
+      </div>
+  </div>
+</Div>
+{% endblock %}

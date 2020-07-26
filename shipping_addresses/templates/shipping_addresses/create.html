@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <div id="order-body">
+    <div class="order">
+        <div class="col">
+            <div class="h3">
+              Nueva dirección
+            </div>
+            <div class="">
+              {% include 'shipping_addresses/snippets/form.html' with message='Crear' %}
+            </div>
+          </div>        
+    </div>   
+  </div>
+{% endblock %}

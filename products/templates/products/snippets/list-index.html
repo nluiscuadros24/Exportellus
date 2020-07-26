@@ -1,0 +1,29 @@
+
+  <div class="product_carousel product_column5 owl-carousel">
+    {% for object in product_list %}
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        <div class="product_items">
+            {% include 'products/snippets/product.html' with product=object %}
+            {% include 'products/snippets/product.html' with product=object %}
+        </div>
+        {% endfor %}
+  </div>  

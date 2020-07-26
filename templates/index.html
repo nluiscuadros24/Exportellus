@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!--slider area start-->
+    <section class="slider_section">
+        <div class="slider_area owl-carousel">
+            <div class="single_slider d-flex align-items-center" data-bgimg="{% static 'img/slider/slider-image-sombra.svg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="slider_content">
+                                <h1>¡Exporta tu prodcuto!</h1>
+                                <h2>Compra y vende facil con Exportellus</h2>
+                                <p>
+								10% certifled-organic mix of fruit and veggies. Perfect for weekly cooking and snacking!
+							    </p> 
+                                <a href="{{ explore }}">Explora </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--slider area end-->
+
+    <!--CATEGORIAS AREA START-->
+    <div class="categorias-container">
+        <div class="titulo-categorias">
+            <h4 style="font-weight: normal; font-size: 18px; text-transform: uppercase;">
+            Categorias mas populares
+            </h4>
+        </div>
+        <nav>
+            <ul class="categorias">
+                <a href="#"><li class="categorialista"><i class="far fa-snowflake"></i><br> Congelados</li></a>
+                <a href="#"><li class="categorialista"><i class="fas fa-lemon"></i><br> Frutas</li></a>
+                <a href="#"><li class="categorialista"><i class="fas fa-seedling"></i><br> Semillas</li></a>
+                <a href="#"><li class="categorialista"><i class="fas fa-pepper-hot"></i><br> Vegetales</li></a>
+                <a href="#"><li class="categorialista"><i class="fas fa-hamburger"></i><br> Alimentos</li></a>
+                <a href="#"><li class="categorialista"><i class="fas fa-wine-bottle"></i><br> Bebidas</li></a>
+            </ul>
+                <div class="handle"><i class="fas fa-long-arrow-alt-down"></i> Categorias</div>
+        </nav>    
+        <br>
+    </div>
+    <!--CATEGORIAS AREA END-->
+
+    
+    <!--product area start-->
+    <br>
+    <br>
+    <div class="product_area  mb-64">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product_header">
+                        <div class="section_title">
+                           <h2>En tendencia</h2>
+                        </div>
+                        <div class="product_tab_btn">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#plant1" role="tab" aria-controls="plant1" aria-selected="true"> 
+                                       Vegetales
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#plant2" role="tab" aria-controls="plant2" aria-selected="false">
+                                        Frutas
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#plant3" role="tab" aria-controls="plant3" aria-selected="false">
+                                        Alimentos
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="product_container">  
+               <div class="row">
+                   <div class="col-12">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="plant1" role="tabpanel">
+                                {% include 'products/snippets/list-index.html' %} 
+                            </div>
+                            <div class="tab-pane fade" id="plant2" role="tabpanel">
+                                {% include 'products/snippets/list-index.html' %}
+                            </div>
+                            <div class="tab-pane fade" id="plant3" role="tabpanel">
+                                {% include 'products/snippets/list-index.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>   
+        </div> 
+    </div>
+    <!--product area end-->
+
+     <!--shipping area start-->
+     <div class="shipping_area">
+        <div class="titulo-shipping">
+            <h4 style="font-weight: normal; font-size: 18px; text-transform: uppercase;">
+            ¿Cómo funciona Exportellus?
+            </h4>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="{% static 'img/icon/tutorial.svg' %}" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Elige un producto</h3>
+                            <p>Eliga el producto que quieres comprar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping col_2">
+                        <div class="shipping_icone">
+                            <img src="{% static 'img/icon/tutorial3.svg' %}" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Habla con el vendedor</h3>
+                            <p>Coordina los detalles y el lugar de entrega</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping col_3">
+                        <div class="shipping_icone">
+                            <img src="{% static 'img/icon/tutorial2.svg' %}" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Coordina el pago </h3>
+                            <p>Haz el pago de tu producto</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping col_4">
+                        <div class="shipping_icone">
+                            <img src="{% static 'img/icon/tutorial1.svg' %}" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Recibe tu pedido</h3>
+                            <p>Disfruta tu producto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <!--shipping area end-->
+    
+    <!--banner area start-->
+
+    <!--banner area end-->
+        
+    <!--product area start-->
+
+    <!--product area end-->
+
+    <!--product area start-->
+      <div class="product_area mb-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title">
+                           <h2>Recomendados para ti</h2>
+                        </div>
+                    </div>
+                </div> 
+                 <div class="product_container">  
+                   <div class="row">
+                       <div class="col-12">
+                        {% include 'products/snippets/list-index.html' %}   
+                        </div>
+                    </div>        
+                </div>  
+            </div> 
+      </div>
+    <!--product area end-->
+    
+    <!--banner fullwidth area satrt-->
+    <div class="banner_fullwidth">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner_full_content">
+                        <h3>Hay cada vez mas compradores en Exportellus,<br> que quieren ver lo que vas a vender</h3>
+                        <a href="shop.html">Resgistrate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--banner fullwidth area end-->
+    
+    <!--product banner area satrt-->
+
+    <!--product banner area end-->
+    
+    
+    <!--blog area start-->
+
+    <!--blog area end-->
+    
+    <!--brand area start-->
+     <!--brand area start-->
+     <div class="brand_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand_container owl-carousel ">
+                        <div class="single_brand">
+                            <a href="#"><img src="static/img/brand/brand1.jpg" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="static/img/brand/brand2.jpg" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="static/img/brand/brand3.jpg" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="static/img/brand/brand4.jpg" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="static/img/brand/brand2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--brand area end-->
+    <!--brand area end-->
+    
+    <!--custom product area start-->
+    <div class="custom_product_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                       <h2>Lo que has buscado</h2><br>
+                       <a href="">Ver tu historial completo</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="product_container">
+                <div class="row">
+                    <div class="col-12">
+                        {% include 'products/snippets/list-index.html' %} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--custom product area end-->
+    
+
+    <!--footer area start-->
+    <footer class="footer_widgets">
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="copyright_area">
+                            <p>Copyright  © 2020  <a href="#">Expotellus</a>  . All Rights Reserved.Design by  <a href="#">Exportellus</a></p>
+                        </div>
+                    </div>    
+                    <div class="col-lg-6 col-md-5">    
+                        <div class="footer_payment">
+                            <ul>
+                                <li><a href="#"><img src="{% static 'img/logo/logoexportellus3.png' %}" width="120px"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </footer>
+    <!--footer area end-->
+   
+    {% include 'products/snippets/pop-up.html' %}
+
+    {% endblock %}

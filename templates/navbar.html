@@ -1,0 +1,229 @@
+
+{% load static %}
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'carts:cart' as cart %}
+{% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
+{% url 'orders:completeds' as completeds %}
+{% url 'billing_profiles:billing_profiles' as billing_profiles %}
+    <!--header area start-->
+    
+    <!--offcanvas menu area start-->
+    <div class="off_canvars_overlay">
+                
+    </div>
+    <div class="offcanvas_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="canvas_open">
+                        <a href="javascript:void(0)"><i class="icon-menu"></i></a>
+                    </div>
+                    <div class="offcanvas_menu_wrapper">
+                        <div class="canvas_close">
+                            <a href="javascript:void(0)"><i class="icon-x"></i></a>  
+                        </div>
+                        <div class="search_container">
+                            {% include 'products/snippets/search.html' %}
+                        </div>
+                        <div id="menu" class="text-left ">
+                            <ul class="offcanvas_main_menu">
+                                <li class="menu-item-has-children active">
+                                    <a href="#">Home</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index-2.html">Home 2</a></li>
+                                        <li><a href="index-3.html">Home 3</a></li>
+                                        <li><a href="index-4.html">Home 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Shop Layouts</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="shop.html">shop</a></li>
+                                                <li><a href="shop-fullwidth.html">Full Width</a></li>
+                                                <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
+                                                <li><a href="shop-right-sidebar.html">Right Sidebar </a></li>
+                                                <li><a href="shop-right-sidebar-list.html"> Right Sidebar list</a></li>
+                                                <li><a href="shop-list.html">List View</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">other Pages</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="cart.html">cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="my-account.html">my account</a></li>
+                                                <li><a href="404.html">Error 404</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Product Types</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="product-details.html">product details</a></li>
+                                                <li><a href="product-sidebar.html">product sidebar</a></li>
+                                                <li><a href="product-grouped.html">product grouped</a></li>
+                                                <li><a href="variable-product.html">product variable</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="blog-details.html">blog details</a></li>
+                                        <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
+                                        <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                                    </ul>
+
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">pages </a>
+                                    <ul class="sub-menu">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">services</a></li>
+                                        <li><a href="faq.html">Frequently Questions</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                        <li><a href="login.html">login</a></li>
+                                        <li><a href="404.html">Error 404</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="my-account.html">my account</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="about.html">about Us</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="contact.html"> Contact Us</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--offcanvas menu area end-->
+    
+    <nav>
+        <div class="main_header">
+
+            <div class="header_middle">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <div class="logo">
+                            </div>
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo/logoexportellus3.png' %}"  alt=""></a>
+                        </div>
+                        <div class="col-lg-10 col-md-6 col-sm-7 col-8">
+                            <div class="header_right_info">
+                                <div class="search_container">
+                                    {% include 'products/snippets/search.html' %}
+                                </div>
+                                <div class="header_account_area">
+                                    <div class="header_account_list register">
+                                        {% if user.is_authenticated %}
+                                        <ul>
+                                            <button class="dropdownbutton" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                MI PERFIL
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                              <a class="dropdown-item {% if request.path == shipping_addresses%}active{% endif %}" href="{{ shipping_addresses }}">Mis direcciones</a>
+                                              <a class="dropdown-item {% if request.path == completeds %}active{% endif %}" href="{{ completeds }}">Mis pedidos</a>
+                                              <a class="dropdown-item {% if request.path == sales %}active{% endif %}" href="{{ sales }}">Mis ventas</a>
+                                              <a class="dropdown-item {% if request.path == billing_profiles %}active{% endif %}" href="{{ billing_profiles }}">Mis formas de pago</a>
+                                              <a class="dropdown-item {% if request.path == configuracion %}active{% endif %}" href="{{ configuracion }}">Configuracion</a>
+                                              <a class="dropdown-item {% if request.path == logout %}active{% endif %}" href="{% url 'index' %}">Cerrar sesion</a>
+                                            </div>
+                                            <li><span>/</span></li>
+                                            <li class="navbar-item {% if request.path == login %}active{% endif %}"><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                                        </ul>
+                                        {% else %}
+                                        <ul>
+                                            <li class="navbar-item {% if request.path == register %}active{% endif %}"><a href="{{ register }}">Registrarme</a></li>
+                                            <li><span>/</span></li>
+                                            <li class="navbar-item {% if request.path == login %}active{% endif %}"><a href="{{ login }}">Iniciar sesion</a></li>
+                                        </ul>
+                                        {% endif %}
+                                    </div>
+                                    {% if user.is_authenticated %}
+                                    <div class="header_account_list  mini_cart_wrapper">
+                                       <a href="javascript:void(0)"><span class="lnr lnr-cart"></span><span class="item_count">2</span></a>
+                                    {% endif %}
+                                        <!--mini cart-->
+                                        <div class="mini_cart">
+                                            <div class="cart_gallery">
+                                                <div class="cart_close">
+                                                	<div class="cart_text">
+                                                		<h3>cart</h3>
+                                                	</div>
+                                                	<div class="mini_cart_close">
+                                                		<a href="javascript:void(0)"><i class="icon-x"></i></a>
+                                                	</div>
+                                                </div>
+                                                <div class="cart_item">
+                                                   <div class="cart_img">
+                                                       <a href="#"><img src="{% static 'img/s-product/product.jpg' %}" alt=""></a>
+                                                   </div>
+                                                    <div class="cart_info">
+                                                        <a href="#">Primis In Faucibus</a>
+                                                        <p>1 x <span> $65.00 </span></p>    
+                                                    </div>
+                                                    <div class="cart_remove">
+                                                        <a href="#"><i class="icon-x"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_item">
+                                                   <div class="cart_img">
+                                                       <a href="#"><img src="{% static 'img/s-product/product.jpg' %}" alt=""></a>
+                                                   </div>
+                                                    <div class="cart_info">
+                                                        <a href="#">Letraset Sheets</a>
+                                                        <p>1 x <span> $60.00 </span></p>    
+                                                    </div>
+                                                    <div class="cart_remove">
+                                                        <a href="#"><i class="icon-x"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mini_cart_table">
+                                                <div class="cart_table_border">
+                                                    <div class="cart_total">
+                                                        <span>Sub total:</span>
+                                                        <span class="price">$125.00</span>
+                                                    </div>
+                                                    <div class="cart_total mt-10">
+                                                        <span>total:</span>
+                                                        <span class="price">$125.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mini_cart_footer">
+                                               <div class="cart_button {% if request.path == cart%}active{% endif %}">
+                                                    <a href="{{ cart }}"><i class="fa fa-shopping-cart"></i> View cart</a>
+                                                </div>
+                                                <div class="cart_button">
+                                                    <a href="checkout.html"><i class="fa fa-sign-in"></i> Checkout</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!--mini cart end-->
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <br>
+        </div> 
+    </nav>
+    <!--header area end-->

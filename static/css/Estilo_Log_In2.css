@@ -1,0 +1,280 @@
+
+
+
+:root
+{
+--verdecolor: #1CB978;
+--verdepalido: #6ED69A;
+--gris: #c0c0c0;
+--griscolor: #F6F6F6;
+--griscolor2: #F2F2F2;
+--grisverde: #F6FBFB;
+--grissceleste: #F7FAFC;
+--grisoscuro: #707070;
+--blanco: #ffffff;
+--verdeoscuro: #3D5662;
+--salmon: #F87161;
+/*botones*/
+--borderradiusboton: 7px;
+/*botones*/
+--boxshadow: 0px 1px 5px 0px #0000002b;
+/*tamano de letra*/
+--letrastandar: 10pt;
+--encabezado: 20px;
+--titulo2: 17px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+/* transition */
+/* flex */
+/* transform */
+/* opacity */
+/*----------------------------------------*/
+/*  01. Theme default CSS
+/*----------------------------------------*/
+/*-- Google Font --*/
+/*-- Common Style --*/
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  visibility: visible;
+  font-family: "Work Sans", sans-serif;
+  color: var(--grisoscuro);
+  letter-spacing: 0.02em;
+  background-image: url(../img/fondo/Login.jpg) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+
+/* sign in FORM */
+#logreg-forms{
+    width:450px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    color: var(--grisoscuro);
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+
+#logreg-forms form {
+    width: 100%;
+    max-width: 410px;
+    padding: 35px;
+    margin: auto;
+    margin-top: 150px;
+}
+#logreg-forms .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+}
+
+.logo{
+    width: 160px;
+    margin-left: 110px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+
+.form-control::placeholder {
+color: #c2c2c2;
+font-weight: 100;
+}
+
+#logreg-forms .form-control:focus { z-index: 2; }
+#logreg-forms .form-signin input[type="username"] {
+    margin-bottom: -1px;
+    margin-bottom: 20px;
+}
+#logreg-forms .form-signin input[type="password"] {
+    margin-bottom: 20px;
+}
+
+#logreg-forms .social-login{
+    width:350px;
+    margin:0 auto;
+    margin-bottom: 20px;
+}
+#logreg-forms .social-btn{
+    font-weight: 100;
+    color:white;
+    width:168px;
+    font-size: 0.9rem;
+}
+
+#logreg-forms a{
+    display: block;
+    color:var(--grisoscuro);
+    text-align: center;
+}
+
+#logreg-forms a:hover{
+    padding-left: 5px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+
+#logreg-form .lines{
+    width:200px;
+    border:1px solid red;
+}
+
+
+.btn-success {
+    color: #fff;
+    background-color:var(--verdecolor);
+    border-style: none;
+    box-shadow: var(--boxshadow);
+    margin-bottom: 20px;
+}
+
+.btn-success:hover
+{
+    background-color: var(--verdecolor);
+    font-style: none;
+}
+
+.nuevacuenta {
+    color: var(--grisoscuro) !important;
+    border-style: none;
+    text-align: center;
+}
+
+.nuevacuenta:hover
+{
+    padding-left: 5px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+#logreg-forms button[type="submit"]{
+    background-color: var(--verdecolor);
+    border-style: none;
+    box-shadow: var(--boxshadow);
+    margin-bottom: 25px;
+    margin-top: 35px;
+ }
+
+#logreg-forms .facebook-btn{  background-color:#3C589C; box-shadow: var(--boxshadow); }
+
+#logreg-forms .google-btn{ background-color: var(--salmon); box-shadow: var(--boxshadow) }
+
+
+#logreg-forms .form-signup .social-btn
+{ width:340px; }
+
+#logreg-forms .form-signup input 
+{ margin-bottom: 15px;}
+
+.form-signup .social-login{
+    width:340px !important;
+    margin: 0 auto;
+}
+
+.awmind
+{
+    color: var(--grisoscuro);
+}
+
+.awmind:hover
+{
+    color: var(--grisoscuro);
+    font-style: none;
+}
+
+
+
+/* Mobile */
+
+@media screen and (max-width:500px){
+    #logreg-forms{
+        width:300px;
+    }
+    
+    #logreg-forms  .social-login{
+        width:200px;
+        margin:0 auto;
+        margin-bottom: 10px;
+    }
+    #logreg-forms  .social-btn{
+        font-size: 1.3rem;
+        font-weight: 100;
+        color:white;
+        width:200px;
+        height: 56px;
+        
+    }
+    #logreg-forms .social-btn:nth-child(1){
+        margin-bottom: 5px;
+    }
+    #logreg-forms .social-btn span{
+        display: none;
+    }
+    #logreg-forms  .facebook-btn:after{
+        content:'Facebook';
+    }
+  
+    #logreg-forms  .google-btn:after{
+        content:'Google+';
+    }
+    
+}

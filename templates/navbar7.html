@@ -1,0 +1,53 @@
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'carts:cart' as cart %}
+{% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
+{% url 'orders:completeds' as completeds %}
+{% url 'billing_profiles:billing_profiles' as billing_profiles %}
+
+<div class="item1 header">
+  <div class="logo-caja">
+      <a href="{% url 'index' %}"><img class="logo" src="static/iconos/logoexportellus.svg" alt=""></a>
+  </div>
+  {% include 'products/snippets/search.html' %}
+  <div class="opciones">
+      {% if user.is_authenticated %}
+      <div class="login-caja">                    
+              <button class="dropdownbutton" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ¡Hola Luis!
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item {% if request.path == shipping_addresses%}active{% endif %}" href="{{ shipping_addresses }}">Mis direcciones</a>
+                <a class="dropdown-item {% if request.path == completeds %}active{% endif %}" href="{{ completeds }}">Mis pedidos</a>
+                <a class="dropdown-item {% if request.path == sales %}active{% endif %}" href="{{ sales }}">Mis ventas</a>
+                <a class="dropdown-item {% if request.path == billing_profiles %}active{% endif %}" href="{{ billing_profiles }}">Mis formas de pago</a>
+                <a class="dropdown-item {% if request.path == configuracion %}active{% endif %}" href="{{ configuracion }}">Configuracion</a>
+                <a class="dropdown-item {% if request.path == logout %}active{% endif %}" href="{% url 'index' %}">Cerrar sesion</a>
+              </div>
+
+      </div>
+
+      <div href="" class="carritoheader {% if request.path == cart%}active{% endif %}">
+          <div class="carrito">
+              <a href="{{ cart }}"><img class="carrito1" src="static/iconos/carrito.svg"></a>
+          </div>
+      </div>
+
+      {% else %}
+      <div class="login-caja">                    
+          <a href="{{ login }}"><button class="main_button {% if request.path == login %}active{% endif %}">
+              Iniciar sesion
+          </button></a>
+      </div>
+
+      <div class="login-caja">                    
+          <a href="{{ register }}"><button class="main_button {% if request.path == register %}active{% endif %}">
+              Resgistrarme
+          </button></a>
+      </div>
+
+      {% endif %}
+  </div>
+  
+
+</div>

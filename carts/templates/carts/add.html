@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cart_extras %}
+
+
+
+{% block content %}
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+      <div class="container">   
+          <div class="row">
+              <div class="col-12">
+                  <div class="breadcrumb_content">
+                     <h3 style="font-size: 25px;">EL PRODUCTO HA SIDO AGREGADO CON EXITO</h3>
+                  </div>
+              </div>
+          </div>
+      </div>         
+  </div>
+  <!--breadcrumbs area end-->
+  
+   <!--shopping cart area start -->
+  <div class="shopping_cart_area">
+      <div class="container">  
+          <form action="#"> 
+              <div class="row">
+                  <div class="col-12">
+                      <div class="table_desc">
+                          <div class="cart_page table-responsive">
+                              <table>
+                                  <thead>
+                                      <tr>
+                                          <th class="product_thumb">Imagen</th>
+                                          <th class="product_name">Producto</th>
+                                          <th class="product-price">Precio</th>
+                                          <th class="product_quantity">Cantidad</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td class="product_thumb">
+                                            {% if product.image %}
+                                                <a href=""><img src="{{ product.image.url }}" alt="Imagen del producto"></a>
+                                            {% endif %}
+                                            </td>
+                                          <td class="product_name"><a href="{% url 'products:product' product.slug %}">{{ product.title }}</a></td>
+                                          <td class="product-price">${{ product.price }}</td>
+                                          <td class="product_quantity">{{ quantity | quantity_add_format }}</td> 
+                                      </tr>
+                                  </tbody>
+                              </table>   
+                          </div>      
+                      </div>
+                      <div class="boton-add">
+                          <a href="{% url 'carts:cart' %}">Ver carrito</a>
+                          <a href="{% url 'index' %}">Seguir comprando</a>
+                      </div>
+                   </div>
+               </div>
+          </form> 
+      </div>     
+  </div>
+   <!--shopping cart area end -->
+
+{% endblock %}
+

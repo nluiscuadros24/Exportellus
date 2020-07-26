@@ -1,0 +1,141 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/Estilo_Log_In.css' %}">
+    <title>Log In</title>
+  </head>
+  <body>
+    <div id="logreg-forms">
+        {% if messages %}
+            {% for message in messages %}
+        
+        
+        <div class="alert {% if message.tags == 'succes' %}alert-succes{%else%}alert-danger{%endif%}">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+
+            {{ message }}
+
+        </div>
+            {% endfor %}
+        {% endif %}
+        <form class="form-signin" method = "post">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Exportellus</h1>
+            <div class="social-login">
+                <!-- B O T O N  D E  F A C E B O O K -->           <!-- B O T O N  D E  F A C E B O O K -->         <!-- B O T O N  D E  F A C E B O O K -->
+                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+                
+                <!-- B O T O N  D E  G O O G L E -->           <!-- B O T O N  D E  G O O G L E -->         <!-- B O T O N  D E  G O O G L E -->
+                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+            </div>
+            <p style="text-align:center"> OR  </p>
+
+            <!--  CUADRO DE TEXTO CUADRO DE TEXTO E - M A I L -->           <!-- CUADRO DE TEXTO CUADRO DE TEXTO E - M A I L -->         <!-- CUADRO DE TEXTO CUADRO DE TEXTO E - M A I L -->
+            <input type="text" name="username" class="form-control" placeholder="Email o Usuario" required="" autofocus="">
+
+            <!-- CUADRO DE TEXTO C O N T R A S E N A -->           <!-- CUADRO DE TEXTO C O N T R A S E N A -->         <!-- CUADRO DE TEXTO C O N T R A S E N A -->
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            
+            <!-- B O T O N  S I G N  IN -->           <!-- B O T O N  S I G N  IN -->         <!-- B O T O N  S I G N  IN -->
+            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+
+            <!-- BOTON OLVIDASTE LA CONTRASENA? -->           <!-- BOTON OLVIDASTE LA CONTRASENA? -->         <!-- BOTON OLVIDASTE LA CONTRASENA? --> 
+            <a href="#" id="forgot_pswd">Forgot password?</a>
+            <hr>
+
+            <!-- BOTON SIGN UP NEW ACOUNT  -->          <!-- BOTON SIGN UP NEW ACOUNT  -->        <!-- BOTON SIGN UP NEW ACOUNT  -->
+            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+        </form>
+
+            <!-- BOTON OLVIDASTE LA CONTRASENA -->           <!--BOTON OLVIDASTE LA CONTRASENA -->         <!-- BOTON OLVIDASTE LA CONTRASENA -->          
+            <form action="/reset/password/" class="form-reset" method="post">
+                {% csrf_token %} 
+            <!-- CUADRO DE TEXTO E - M A I L -->           <!-- CUADRO DE TEXTO E - M A I L -->         <!-- CUADRO DE TEXTO E - M A I L -->   
+                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+
+            <!-- BOTON RESET PASSWORD -->           <!-- BOTON RESET PASSWORD -->         <!-- BOTON RESET PASSWORD -->
+                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+
+            <!-- BOTON BACK -->           <!-- BOTON BACK -->         <!-- BOTON BACK -->
+                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+            </form>
+           
+            
+            <!-- SECCION SIGN UP -->           <!-- SECCION SIGN UP -->         <!--SECCION SIGN UP -->
+            <form action='home' class="form-signup" method="post">
+                {% csrf_token %} 
+                <div class="social-login">
+                <!-- B O T O N  D E  F A C E B O O K -->           <!-- B O T O N  D E  F A C E B O O K -->         <!-- B O T O N  D E  F A C E B O O K -->
+                
+                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+                </div>
+                <div class="social-login">
+                    <!-- B O T O N  D E  G O O G L E -->           <!-- B O T O N  D E  G O O G L E -->         <!-- B O T O N  D E  G O O G L E -->
+                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                </div>
+                
+                <p style="text-align:center">OR</p>
+
+                <!-- CUADRO DE TEXTO FULL NAME -->           <!-- CUADRO DE TEXTO FULL NAME -->         <!-- CUADRO DE TEXTO FULL NAME -->
+                <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+
+                <!-- CUADRO DE TEXTO E - M A I L -->           <!-- CUADRO DE TEXTO E - M A I L -->         <!-- CUADRO DE TEXTO E - M A I L -->
+                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+
+                <!-- CUADRO DE TEXTO C O N T R A S E N A -->           <!-- CUADRO DE TEXTO C O N T R A S E N A -->         <!-- CUADRO DE TEXTO C O N T R A S E N A -->
+                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+
+                <!-- CUADRO DE TEXTO R E P E T I R  C O N T R A S E N A -->           <!-- CUADRO DE TEXTO C O N T R A S E N A -->         <!-- CUADRO DE TEXTO C O N T R A S E N A -->
+                <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+
+
+                <!-- BOTON SIGN UP -->           <!-- BOTON SIGN UP -->         <!--BOTON SIGN UP -->
+                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+
+                <!-- BOTON BACK -->           <!-- BOTON BACK -->         <!-- BOTON BACK -->
+                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+            </form>
+            <br>
+            
+    </div>
+    <p style="text-align:center">
+        <a href="http://bit.ly/2RjWFMfunction toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})g" target="_blank" style="color:black">By Awmind</a>
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'js/Javascript.js' %}"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+
+    <!--shop  area start-->
+    <div class="shop_area shop_reverse mt-70 mb-70">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-12">
+                 <!--sidebar widget start-->
+                 <!--sidebar widget start-->
+                 <aside class="sidebar_widget">
+                  <div class="widget_inner">
+                      <div class="widget_list widget_filter">
+                          <h3>Filter by price</h3>
+                          <form action="#"> 
+                              <div id="slider-range"></div>   
+                              <button type="submit">Filter</button>
+                              <input type="text" name="text" id="amount" />   
+
+                          </form> 
+                      </div>
+                      <div class="widget_list widget_color">
+                          <h3>Ubicacion</h3>
+                          <ul>
+                              <li>
+                                  <a href="#">Ecuador  <span>(6)</span></a> 
+                              </li>
+                              <li>
+                                  <a href="#"> Argentina <span>(8)</span></a> 
+                              </li>
+                              <li>
+                                  <a href="#">Peru <span>(10)</span></a> 
+                              </li>
+                              <li>
+                                  <a href="#"> Bollivia <span>(6)</span></a> 
+                              </li>
+                              <li>
+                                  <a href="#">Chile <span>(4)</span></a> 
+                              </li>
+                            
+                          </ul>
+                      </div>
+                    </div>
+              </aside>
+                  <!--sidebar widget end-->
+              </div>
+              <div class="col-lg-9 col-md-12">
+                  <!--shop wrapper start-->
+                  <!--shop toolbar start-->
+                  <div class="shop_toolbar_wrapper">
+                      <div class="shop_toolbar_btn">
+
+                          <button data-role="grid_3" type="button" class=" btn-grid-3" data-toggle="tooltip" title="3"></button>
+
+                          <button data-role="grid_4" type="button"  class=" btn-grid-4" data-toggle="tooltip" title="4"></button>
+
+                          <button data-role="grid_list" type="button"  class="active btn-list" data-toggle="tooltip" title="List"></button>
+                      </div>
+                      <div class=" niceselect_option">
+                          <form class="select_option" action="#">
+                              <select name="orderby" id="short">
+
+                                  <option selected value="1">Sort by average rating</option>
+                                  <option  value="2">Sort by popularity</option>
+                                  <option value="3">Sort by newness</option>
+                                  <option value="4">Sort by price: low to high</option>
+                                  <option value="5">Sort by price: high to low</option>
+                                  <option value="6">Product Name: Z</option>
+                              </select>
+                          </form>
+                      </div>
+                      <div class="page_amount">
+                          <p>Showing 1–9 of 21 results</p>
+                      </div>
+                  </div>
+                   <!--shop toolbar end-->
+                   <div class="row shop_wrapper grid_list">
+                    {% for object in product_list %}
+                    {% include 'products/snippets/productsearch.html' with product=object %}
+                   </div>
+                    {% endfor %}
+
+                  <div class="shop_toolbar t_bottom">
+                      <div class="pagination">
+                          <ul>
+                              <li class="current">1</li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li class="next"><a href="#">next</a></li>
+                              <li><a href="#">>></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <!--shop toolbar end-->
+                  <!--shop wrapper end-->
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--shop  area end-->

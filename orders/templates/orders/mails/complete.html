@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div id="mail-body">
+  <div class="mail">
+    <div class="">
+      <h4> Hola {{ user.username }} tu pedido ha sido enviado</h4>
+      <p>Recuerda puedes visitar la página para ver tus pedidos</p>
+      <a href="{{ next_url }}" target="_blank">Mis pedidos</a>
+    </div>        
+  </div>   
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load product_extras %}
+
+
+
+{% block content %}
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                       <h3>CARRITO</h3>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+    {% if cart.products.exists %} 
+        <!--shopping cart area start -->
+        <div class="shopping_cart_area">
+            <div class="container">  
+                <div> 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table_desc">
+                                <div class="cart_page table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product_number">#</th>
+                                                <th class="product_remove">Eliminar</th>
+                                                <th class="product_thumb">Imagen</th>
+                                                <th class="product_name">Producto</th>
+                                                <th class="product-price">Precio</th>
+                                                <th class="product_quantity">Cantidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for cp in cart.products_related %}
+                                                {% with product=cp.product %}
+                                                    <tr>
+                                                        <td class="product_number">{{ forloop.counter }}</td>
+                                                        <td class="product_remove">{% include 'carts/snippets/remove.html' %}</td>
+                                                        <td class="product_thumb">
+                                                            <a href="">
+                                                                {% if product.image %}
+                                                                    <img src="{{ product.image.url }}" alt="Imagen del producto">
+                                                                {% endif %}
+                                                            </a>
+                                                        </td>
+                                                        <td class="product_name"><a href="{% url 'products:product' product.slug %}">{{ product.title }}</a></td>
+                                                        <td class="product-price">{{ product.price | price_format }}</td>
+                                                        <td class="product_quantity">{{ cp.quantity }}</td>
+                                                    </tr>
+                                                {% endwith %}
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>   
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                    <!--coupon code area start-->
+                    <div class="coupon_area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="coupon_code right">
+                                    <h3>Balance final</h3>
+                                    <div class="coupon_inner">
+                                    <div class="cart_subtotal">
+                                        <p>Subtotal</p>
+                                        Subtotal ({{ cart.products.count }}): <p class="cart_amount"> {{ cart.subtotal | price_format }}</p>
+                                    </div>
+                                    <div class="checkout_btn">
+                                            <a href="{% url 'orders:order' %}" class="btn btn-warning">Proceder al pago</a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--coupon code area end-->
+                </div> 
+            </div>     
+        </div>
+        <!--shopping cart area end -->
+    {% else %}
+        <div class="error_cart">
+            <h2>Ups! Tu carrito de compras esta vacio</h2> 
+            <a href="{% url 'index' %}">Seguir explorando</a>
+        </div>
+    {% endif %} 
+    
+        <!--product area start-->
+        <div class="product_area mb-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title">
+                           <h2>Recomendados para ti</h2>
+                        </div>
+                    </div>
+                </div> 
+                 <div class="product_container">  
+                   <div class="row">
+                       <div class="col-12">
+                            {% include 'products/snippets/list-index.html' %} 
+                        </div>
+                    </div>        
+                </div>  
+            </div> 
+        </div>
+    <!--product area end-->
+    
+
+{% endblock %}

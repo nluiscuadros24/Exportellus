@@ -1,0 +1,25 @@
+{% load static %}
+<!-- carta de producto -->
+<article class="single_product">
+    <figure>
+        <div class="product_thumb">
+            {% if product.image %}
+            <a class="primary_img" href="{% url 'products:product' product.slug %}">
+              <img src="{{ product.image.url }}" alt="Imagen del producto" height="212px">
+            </a>
+            {% endif %}
+            <div class="action_links">
+                <ul>
+                    <li class="add_to_cart"><a href= "{% url 'carts:add' %}" title="Añadir a carrito"><span class="lnr lnr-cart"></span></a></li>
+                    <li class="quick_button"><a href="#" data-toggle="modal" data-target="#modal_box"  title="Vista rápida"> <span class="lnr lnr-magnifier"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <figcaption class="product_content">
+            <p><a href="#">Categoria</a></p>
+            <div class="price_box"> 
+                <span class="current_price">{{ product.price }}</span>
+            </div>
+        </figcaption>
+    </figure>
+  </article>
