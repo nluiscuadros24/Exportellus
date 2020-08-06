@@ -55,42 +55,8 @@ class RegisterForm(forms.Form):
                 self.cleaned_data.get('password'),
             )
 
-#class UpdateProfileForm(forms.Form):
-    #Title = forms.CharField(required=True,
-                                #min_length=4, max_length=50,
-                                #widget=forms.TextInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': 'Título'
-                                #}))
-    #Descripción = forms.CharField(required=True,
-                                #min_length=4, max_length=200,
-                                #widget=forms.TextInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': 'Descripcion',
-                                #}))
-    #Precio = forms.DecimalField(required=True,
-                                #max_digits=8, decimal_places=2, default=0.0,
-                                #widget=forms.NumberInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': 'Precio',
-                                #}))
-    #Slug = forms.SlugField(required=True,
-                                #null=False, blank=False, unique=True,
-                                #widget=forms.TextInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': '',
-                                #}))
-    #Imagenes = forms.ImageField(required=True,
-                                #upload_to='products/', null=False, blank=False,
-                                #widget=forms.ClearableFileInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': '',
-                                #}))
-    #created_at = forms.DateTimeField(required=True,
-                                #auto_now_add=True,
-                                #widget=forms.DateTimeInput(attrs={
-                                    #'class': 'form-control',
-                                    #'id': '',
-                                #}))
+
+
+    
 
 
