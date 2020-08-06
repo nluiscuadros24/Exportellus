@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'exportellus__web',
         'USER': 'postgres',
-        'PASSWORD': 'geometriasagrada',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -124,7 +124,7 @@ from decouple import config
 EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'luiscuadrosa@gmail.com'
-EMAIL_HOST_PASSWORD = 'geometriasagrada1' #Env
+EMAIL_HOST_PASSWORD = '' #Env
 EMAIL_USE_TLS = True
 
 STRIPE_PUBLIC_KEY = 'pk_test_51GxcuaJqtBZRHIbTyT3L7SxwwO0WU22IS2owhDtI9SEX0blMQuFPBuMX01yhiBanNvl7zobVNNxKj3mvIpJgd3mT00SBjwd0jF'
