@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9@j@@*pw#lmuv$n##ekr%j795aca=pmw6)1dseta_7@69aw9gg'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,7 +128,7 @@ EMAIL_HOST_PASSWORD = '' #Env
 EMAIL_USE_TLS = True
 
 STRIPE_PUBLIC_KEY = 'pk_test_51GxcuaJqtBZRHIbTyT3L7SxwwO0WU22IS2owhDtI9SEX0blMQuFPBuMX01yhiBanNvl7zobVNNxKj3mvIpJgd3mT00SBjwd0jF'
-STRIPE_PRIVATE_KEY = 'sk_test_51GxcuaJqtBZRHIbT3cNpI9uOJYNQ6f7PqC2TwLHF27sS04wwi2ftVLaAhNHKsixEMEeSk4gxAajzUQlDDjncOJmh002P3M7nE6'
+STRIPE_PRIVATE_KEY = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
